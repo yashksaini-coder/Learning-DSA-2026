@@ -1,17 +1,23 @@
-#include <bits/stdc++.h>
+#include <iostream>
 using namespace std;
 
 int main() {
-  ios::sync_with_stdio(false);
-  cin.tie(nullptr);
-
-  int n;
+  long long n;
   cin >> n;
 
-  while (n != 0) {
-    cout << n % 10 << endl;
+  // Handle the edge case where N is 0
+  if (n == 0) {
+    cout << 0 << endl;
+    return 0;
+  }
+
+  // Extract and print digits one by one
+  while (n > 0) {
+    int digit = n % 10;
+    cout << digit;
     n /= 10;
   }
+  cout << endl;
 
   return 0;
 }
